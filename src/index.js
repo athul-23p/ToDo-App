@@ -1,4 +1,5 @@
 import note from "./components/todo.js";
+import logo from './assets/todo.svg';
 import ('./styles/index.css');
 
 
@@ -32,8 +33,16 @@ function renderNotes(){
     }))
 
 }
+addHeader();
+function addHeader(){
+    const header = document.getElementById('header');
+    const image_container = document.createElement('div');
+    const img = document.createElement('img');
+    img.setAttribute('src',logo);
+    image_container.append(img);
+    const title = document.createElement('h1');
+    title.textContent = 'TODO App';
 
-function markAsDone(){
-
+    header.append(image_container,title);
 }
 renderNotes();
